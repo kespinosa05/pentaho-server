@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  pentaho:
+    build:
+     context: configs
+     dockerfile: Dockerfile
+    image: mvilche/pentaho:8.2-alpine310
+    environment:
+     - TIMEZONE=America/Montevideo
+    ports:
+     - "8081:8080"
+    networks:
+     - integracion
+
+  postgres:
+    image: postgres:10
+    environment:
+     - POSTGRES_PASSWORD=postgres
+    volumes:
+     - $PWD/database:/var/lib/postgresql/data
+    networks:
+     - integracion
+networks:
+  integracion:
+      driver: bridge
+      ipam:
+        driver: default
+        config:
+         - subnet: 178.148.0.0/16
