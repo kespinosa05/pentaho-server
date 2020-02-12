@@ -1,6 +1,6 @@
 # Pentaho Server Docker images 
 
-[![Build Status](https://travis-ci.com/kespinosa05/pentaho-server.svg?branch=master)]
+[![Build Status](https://travis-ci.com/kespinosa05/pentaho-server.svg?branch=master)](https://travis-ci.com/kespinosa05)
 
 # Funcionalidades:
 
@@ -59,4 +59,4 @@ http://localhost:8080
 License
 ----
 
-Martin vilche
+MIT
