@@ -5,11 +5,11 @@ services:
     build:
      context: configs
      dockerfile: Dockerfile
-    image: kespinosa05/pentaho:9.0-alpine3113
+    image: kespinosa05/pentaho-server-ce-9.0.0.0-423-alpine3113
     environment:
-     - TIMEZONE=America/Montevideo
+     - TIMEZONE=America/Guayaquil
     ports:
-     - "8081:8080"
+     - "8080:8080"
     networks:
      - integration
 
@@ -30,10 +30,9 @@ services:
 #   I used the name postgres-data but you can changed it to something else.
     volumes:
       - ./data/postgres/:/var/lib/postgresql/data:z
-      - ./configs/scripts/1.sql:/docker-entrypoint-initdb.d/1.sql:z
-      - ./configs/scripts/2.sql:/docker-entrypoint-initdb.d/2.sql:z
-      - ./configs/scripts/3.sql:/docker-entrypoint-initdb.d/3.sql:z
-      - ./configs/scripts/4.sql:/docker-entrypoint-initdb.d/4.sql:z
+      - ./configs/scripts/postgresql/create_jcr_postgresql.sql:/docker-entrypoint-initdb.d/create_jcr_postgresql.sql:z
+      - ./configs/scripts/postgresql/create_quartz_postgresql.sql:/docker-entrypoint-initdb.d/create_quartz_postgresql.sql:z
+      - ./configs/scripts/postgresql/create_repository_postgresql.sql:/docker-entrypoint-initdb.d/create_repository_postgresql.sql:z
     networks:
      - integration
 
