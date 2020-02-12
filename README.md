@@ -1,12 +1,13 @@
-# Pentaho Server Docker images 
+# Pentaho Server Docker images  based on [mvilche/pentaho-server](https://hub.docker.com/r/mvilche/pentaho-server)
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
+
+[![Build Status](https://travis-ci.com/kespinosa05/dillinger.svg?branch=master)](https://travis-ci.com/kespinosa05/pentaho-server)
 
 
 # Funcionalidades:
 
 - Non-root
-- Openshift compatible
 - PostgresSQL 10
 
 ### Variables
@@ -14,32 +15,9 @@
 
 | Variable | Detalle |
 | ------ | ------ |
-| TIMEZONE | Define la zona horaria a utilizar (America/Montevideo, America/El_salvador) |
+| TIMEZONE | Define la zona horaria a utilizar (America/Guayaquil) |
 
-
-
-
-## Database Config
-
-
-```bash
-
-docker-compose up -d postgres
-
-
-```
-
-### Run Scripts
-
-```bash
-
-docker-compose exec -u postgres postgres bash
-
-psql < 1.sql && psql < 2.sql && psql < 3.sql && psql < 4.sql
-
-```
-
-## Start Pentaho
+## Start Pentaho and postgre with initial scripts
 
 ```bash
 
@@ -51,13 +29,12 @@ docker-compose up
 
 ```bash
 
-http://localhost:8081
+http://localhost:8080
 
 ```
-
 
 
 License
 ----
 
-Martin vilche
+MIT

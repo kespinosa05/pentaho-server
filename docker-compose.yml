@@ -3,9 +3,9 @@ services:
 #  Create a service named pentaho.
   pentaho:
     build:
-     context: configs
+     context: .
      dockerfile: Dockerfile
-    image: kespinosa05/pentaho-server-ce-9.0.0.0-423-alpine3113
+    image: kespinosa05/pentaho-server-ce:9.0.0.0-423-alpine3113
     environment:
      - TIMEZONE=America/Guayaquil
     ports:
