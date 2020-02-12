@@ -1,8 +1,8 @@
-FROM alpine:3.10
+FROM alpine:3.11.3
 RUN apk add --update --no-cache unzip wget busybox-suid shadow bash openjdk8 tzdata postgresql-client && \
 rm -rf /etc/localtime &&  mkdir -p /opt/pentaho && touch /etc/localtime /etc/timezone
 WORKDIR /opt
-RUN wget "https://sourceforge.net/projects/pentaho/files/Pentaho%208.2/server/pentaho-server-ce-8.2.0.0-342.zip"
+RUN wget "https://sourceforge.net/projects/pentaho/files/Pentaho%209.0/server/pentaho-server-ce-9.0.0.0-423.zip"
 RUN unzip *.zip && rm -rf *.zip
 COPY start.sh /usr/bin/start.sh
 COPY context.xml /opt/pentaho-server/tomcat/webapps/pentaho/META-INF/context.xml
