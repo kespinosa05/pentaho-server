@@ -1,6 +1,6 @@
 # Pentaho Server Docker images 
 
-[Build Status](https://travis-ci.com/kespinosa05/pentaho-server.svg?branch=master)
+[![Build Status](https://travis-ci.com/kespinosa05/pentaho-server.svg?branch=master)]
 
 # Funcionalidades:
 
@@ -50,7 +50,7 @@ docker-compose up
 
 ```bash
 
-http://localhost:8081
+http://localhost:8080
 
 ```
 
