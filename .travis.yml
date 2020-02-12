@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-- docker build kespinosa05/pentaho-server-ce:latest .
+- docker build -t kespinosa05/pentaho-server-ce:latest .
 
 script:
 - docker image ls
