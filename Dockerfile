@@ -1,5 +1,5 @@
 FROM alpine:3.11.3
-RUN apk add --update --no-cache unzip wget busybox-suid shadow bash openjdk8 tzdata postgresql-client terminus-font fc-list msttcorefonts-installer fontconfig && \
+RUN apk add --update --no-cache unzip wget busybox-suid shadow bash openjdk8 tzdata postgresql-client terminus-font msttcorefonts-installer fontconfig && \
     update-ms-fonts && \
     fc-cache -f && \
     rm -rf /etc/localtime &&  mkdir -p /opt/pentaho && touch /etc/localtime /etc/timezone
