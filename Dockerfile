@@ -1,6 +1,8 @@
 FROM alpine:3.11.3
-RUN apk add --update --no-cache unzip wget busybox-suid shadow bash openjdk8 tzdata postgresql-client && \
-rm -rf /etc/localtime &&  mkdir -p /opt/pentaho && touch /etc/localtime /etc/timezone
+RUN apk add --update --no-cache unzip wget busybox-suid shadow bash openjdk8 tzdata postgresql-client terminus-font fc-list msttcorefonts-installer fontconfig && \
+    update-ms-fonts && \
+    fc-cache -f && \
+    rm -rf /etc/localtime &&  mkdir -p /opt/pentaho && touch /etc/localtime /etc/timezone
 WORKDIR /opt
 RUN wget "https://sourceforge.net/projects/pentaho/files/Pentaho%209.0/server/pentaho-server-ce-9.0.0.0-423.zip"
 RUN unzip *.zip && rm -rf *.zip

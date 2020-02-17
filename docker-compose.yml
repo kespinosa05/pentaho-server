@@ -12,7 +12,8 @@ services:
      - "8080:8080"
     networks:
      - integration
-
+    security_opt:
+     - label:disable    
 #  Create a service named postgres.
   postgres:
 #   Use the Docker Image postgres. This will pull the newest release.
@@ -35,7 +36,8 @@ services:
       - ./configs/scripts/postgresql/create_repository_postgresql.sql:/docker-entrypoint-initdb.d/create_repository_postgresql.sql:z
     networks:
      - integration
-
+    security_opt:
+     - label:disable  
 networks:
   integration:
       driver: bridge
